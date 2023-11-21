@@ -1,7 +1,7 @@
 title:              Tech Journal
 email:              migueltrinidad1999@gmail.com
 description:        Discover the world of tech with me! This is my space to share short and sweet articles about random tech stuff. Let's explore together!
-baseurl:            ""
+baseurl:            "miguel_blog"
 url:                "https://startbootstrap.github.io"
 
 # Social Profiles
@@ -22,6 +22,3 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
-
-
-include: /node_modules
