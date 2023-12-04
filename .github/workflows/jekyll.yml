@@ -67,6 +67,6 @@ jobs:
           mkdir -p ~/.ssh/
           echo "${{ secrets.SSH_PRIVATE_KEY_LN }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          rsync -avziO -e "ssh -i ~/.ssh/id_rsa" _site/ mtrinidad@san.ronins.site:/home/mtrinidad/mtrinidad.ronins.site/public/miguel_blog"
+          rsync -avziO _site/ mtrinidad@san.ronins.site:/home/mtrinidad/mtrinidad.ronins.site/public/miguel_blog"
 
           
