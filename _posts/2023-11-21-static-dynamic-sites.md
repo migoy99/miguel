@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Static Sites and Dynamic Sites: a Contrast"
+title: "rsenc!! Static Sites and Dynamic Sites: a Contrast"
 date: 2023-11-20 23:45:13 -0400
 background: '/img/posts/02.jpg'
 author: 'miguel'
