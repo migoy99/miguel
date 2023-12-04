@@ -1,5 +1,5 @@
 # Workflow for building and deploying a Jekyll site to GitHub Pages and to Shared Hosting
-name: Deploy Jekyll site to Pages
+name: Deploy Jekyll site to Pages and Shared Hosting
 
 on:
   # Runs on pushes targeting the default branch
@@ -66,7 +66,7 @@ jobs:
         uses: burnett01/rsync-deployments@6.0.0
         with:
           switches: -avziO
-          path: _site/
+          path: ./_site/
           remote_path: /home/mtrinidad/mtrinidad.ronins.site/public/miguel_blog
           remote_host: san.ronins.site
           remote_user: mtrinidad
