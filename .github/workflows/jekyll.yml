@@ -65,7 +65,7 @@ jobs:
       - name: Deploy to Ronins Server using Rsync
         run : |
           mkdir -p ~/.ssh/
-          echo "${{ secrets.SSH_PRIVATE_KEY_LN }}" > ~/.ssh/id_rsa
+          echo ${{ secrets.SSH_PRIVATE_KEY_LN }} > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           rsync -avziO _site/ mtrinidad@san.ronins.site:/home/mtrinidad/mtrinidad.ronins.site/public/miguel_blog"
 
