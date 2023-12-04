@@ -28,7 +28,7 @@ concurrency:
 
 jobs:
   # Build job
-  build:
+  build-and-deploy-to-shared-hosting:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -50,26 +50,26 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v2
-
-  # Deployment job
-  deploy:
-    environment:
-      name: main
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
       - name: Deploy to Ronins Server using Rsync
         uses: burnett01/rsync-deployments@6.0.0
         with:
           switches: -avziO
-          path: ./_site/
+          path: _site/
           remote_path: /home/mtrinidad/mtrinidad.ronins.site/public/miguel_blog
           remote_host: san.ronins.site
           remote_user: mtrinidad
           remote_key: ${{ secrets.SSH_PRIVATE_KEY_MC }}
+
+  # Deployment job
+  deploy-to-github-pages:
+    environment:
+      name: main
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-and-deploy-to-shared-hosting
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
 
           
