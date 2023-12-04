@@ -70,6 +70,6 @@ jobs:
           remote_path: /home/mtrinidad/mtrinidad.ronins.site/public/miguel_blog
           remote_host: san.ronins.site
           remote_user: mtrinidad
-          remote_key: ${{ secrets.SSH_PRIVATE_KEY_LN }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY_MC }}
 
           
