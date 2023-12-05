@@ -3,7 +3,7 @@ layout: post
 title: "SSH and SCP: Whats and Whys"
 date: 2023-11-20 23:45:13 -0400
 background: '/img/posts/02.jpg'
-author: 'miguel'
+author: 'Miguel Trinidad'
 ---
 This article explores the basics of SSH (Secure Shell) and SCP (Secure Copy Protocol). SSH acts like a secure key to control and communicate with remote computers, while SCP serves as a trustworthy courier for securely transferring files between them. Join me as we unravel the simplicity and importance of these secure protocols, making remote access and file transfers a breeze.
 

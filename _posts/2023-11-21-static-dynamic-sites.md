@@ -3,7 +3,7 @@ layout: post
 title: "Static Sites and Dynamic Sites: a Contrast"
 date: 2023-11-20 23:45:13 -0400
 background: '/img/posts/02.jpg'
-author: 'miguel'
+author: 'Miguel Trinidad'
 ---
 This article defines and compares static and dynamic websites. It discusses the pros and cons of each. The article also highlights the speed differences between the two. It concludes by offering considerations for choosing the right type of website based on content, interactive features, budget, and plans.
 
