@@ -27,7 +27,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build job
+  # Build and Deploy to Shared Hosting Job
   build-and-deploy-to-shared-hosting:
     runs-on: ubuntu-latest
     steps:
@@ -50,17 +50,19 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v2
+
+        # Sync the _site directory to the shared hosting specified directory
       - name: Deploy to Ronins Server using Rsync
         uses: burnett01/rsync-deployments@6.0.0
         with:
           switches: -avziO
           path: _site/
-          remote_path: /home/mtrinidad/mtrinidad.ronins.site/public/miguel_blog
-          remote_host: san.ronins.site
-          remote_user: mtrinidad
+          remote_path: ${{ secrets.REMOTE_DEPLOYMENT_DIR }}
+          remote_host: ${{ secrets.REMOTE_HOST }}
+          remote_user: ${{ secrets.REMOTE_USER }}
           remote_key: ${{ secrets.SSH_PRIVATE_KEY_MC }}
 
-  # Deployment job
+  # Deployment to Github Pages Job
   deploy-to-github-pages:
     environment:
       name: main
