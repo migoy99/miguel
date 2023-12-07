@@ -1,4 +1,5 @@
-# example 2: on merge to master from pull request (recommended)
+# On merge to main from pull request
+# New version test
 name: Bump version
 on:
   pull_request:
